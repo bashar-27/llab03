@@ -111,7 +111,7 @@ namespace lab03
 
                 case "9":
                     Console.WriteLine("Number Of Character For Every Word :");
-                    string str = "This is a sentance about important things";
+                    string str = "This is a sentence about important things";
                     string[] arr2 = (NumbersOfWord(str));
                     for (int i = 0; i < arr2.Length; i++)
                     {
