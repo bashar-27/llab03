@@ -15,7 +15,7 @@ namespace lab03
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Multiply First 3 Number Function : 1");
             Console.WriteLine("-------------------------------------");
-            Console.WriteLine("Avarge Function : 2");
+            Console.WriteLine("Average Function : 2");
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Draw Diamond Stars : 3");
             Console.WriteLine("-------------------------------------");
@@ -55,7 +55,7 @@ namespace lab03
                                 Console.WriteLine($"{i + 1} of {size} - Enter a number:");
                                 arrNum[i] = Convert.ToInt32(Console.ReadLine());
                             }
-                            Console.WriteLine($"the average is {Avarge(size, arrNum)}");
+                            Console.WriteLine($"the average is {Average(size, arrNum)}");
                         }
                     }
                     catch (FormatException)
@@ -129,10 +129,12 @@ namespace lab03
             }
         }
 
-        private static void ReWriteText(string words)
+        public static void ReWriteText(string words)
         {
             string path = "../../../TextFile1.txt";
-            File.WriteAllText(path, words);
+            string content = File.ReadAllText(path);
+            content = content.Replace(words, "");
+            File.WriteAllText(path, content);
         }
 
         public static int MultiplyFirst3(string digit)
@@ -163,7 +165,7 @@ namespace lab03
 
             return multiply;
         }
-        public static int Avarge(int size, int[] num)
+        public static int Average(int size, int[] num)
         {
             int sum = 0;
             for (int i = 0; i < size; i++)
@@ -262,13 +264,15 @@ namespace lab03
             Console.WriteLine("Enter a word:");
             string word = Console.ReadLine();
 
-            string path = "TextFile1.txt";
+            string path = "../../../TextFile1.txt";
+         
+           
             File.WriteAllText(path, word);
 
         }
         public static void PrintFileText()
         {
-            string path = "TextFile1.txt";
+            string path = "../../../TextFile1.txt";
             string dataFromFile = File.ReadAllText(path);
             Console.WriteLine(dataFromFile);
         }

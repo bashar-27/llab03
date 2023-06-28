@@ -35,7 +35,7 @@ namespace TestProject1
         {
             int size = 3;
             int []arr = { 10,20,30} ;
-            int res = Program.Avarge(3,arr);
+            int res = Program.Average(3,arr);
             Assert.Equal(res, 20);
 
         }
@@ -44,11 +44,10 @@ namespace TestProject1
         {
             int size = 3;
             int[] arr = { 0, 0, 0 };
-            int res = Program.Avarge(3, arr);
+            int res = Program.Average(3, arr);
             Assert.Equal(res, 0);
 
         }
-
 
         [Fact]
         public void Test3()
